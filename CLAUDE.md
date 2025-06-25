@@ -34,6 +34,15 @@ src/
 │   ├── layout.tsx       # Root layout with theme provider
 │   └── globals.css      # Global styles with theme variables
 ├── components/
+│   ├── shared/          # Reusable shared components
+│   │   ├── FAQItem.tsx  # Q&A question-answer component
+│   │   ├── FeatureGrid.tsx # Three-column feature grid
+│   │   ├── AppDownloadButtons.tsx # App store download buttons
+│   │   ├── SocialLinks.tsx # Social media links
+│   │   ├── BrandLogo.tsx # Pet Talk logo component
+│   │   ├── PageHeader.tsx # Page title and subtitle
+│   │   ├── ContactItem.tsx # Contact information item
+│   │   └── index.ts     # Shared components export
 │   ├── layout/          # Layout components
 │   │   ├── Header.tsx   # Navigation with theme toggle
 │   │   └── Footer.tsx   # Site footer
@@ -105,8 +114,55 @@ src/
 - Responsive design with mobile-first approach
 - Custom theme variables for consistent branding
 
+## Shared Components Architecture
+
+The project follows a modular component architecture to reduce code duplication:
+
+### Reusable Components (`src/components/shared/`)
+
+- **FAQItem** - Question and answer format component
+- **FeatureGrid** - Three-column feature layout with icon, title, description
+- **AppDownloadButtons** - App Store and Google Play download buttons
+- **SocialLinks** - Instagram and Facebook links with configurable layout
+- **BrandLogo** - Pet Talk logo with optional link
+- **PageHeader** - Page title and subtitle section
+- **ContactItem** - Contact information display with icon and content
+
+### Usage Examples
+
+```tsx
+// Import from shared components
+import { PageHeader, FeatureGrid, AppDownloadButtons } from "@/components/shared"
+
+// Use PageHeader for consistent page titles
+<PageHeader 
+  title="頁面標題" 
+  subtitle="副標題描述" 
+  className="mb-16" 
+/>
+
+// Use FeatureGrid for three-column layouts
+const features = [
+  { icon: "🎯", title: "標題", description: "描述" }
+]
+<FeatureGrid features={features} />
+
+// Use AppDownloadButtons for app download sections
+<AppDownloadButtons variant="secondary" />
+```
+
+### Benefits of This Architecture
+
+1. **DRY Principle** - Eliminates code duplication across pages
+2. **Consistency** - Ensures uniform UI patterns
+3. **Maintainability** - Changes to shared components update everywhere
+4. **Type Safety** - TypeScript interfaces ensure proper prop usage
+5. **Reusability** - Components can be easily reused in new features
+
 ## Adding New Features
-1. Create component in appropriate subfolder under `src/components/`
-2. Add any data to `src/lib/constants.ts`
-3. Define TypeScript types in `src/types/index.ts`
-4. Import and use in relevant page components
+1. Check if needed UI pattern exists in `src/components/shared/`
+2. If reusable, create new shared component with TypeScript interface
+3. Create page-specific components in appropriate subfolder under `src/components/`
+4. Add any data to `src/lib/constants.ts`
+5. Define TypeScript types in `src/types/index.ts`
+6. Import and use in relevant page components

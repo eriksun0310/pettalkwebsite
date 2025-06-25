@@ -1,3 +1,23 @@
+import { FeatureGrid } from "@/components/shared"
+
+const painPoints = [
+  {
+    icon: "😰",
+    title: "資訊不透明",
+    description: "網路上的評價真假難辨，不知道哪些地方真的對毛孩友善。"
+  },
+  {
+    icon: "🤐",
+    title: "不敢說真話",
+    description: "擔心留下負評會被報復，或者不知道該在哪裡分享經驗。"
+  },
+  {
+    icon: "⏰",
+    title: "後悔來不及",
+    description: "等到發生問題才知道某個地方有風險，但已經太遲了。"
+  }
+]
+
 export function BrandConcept() {
   return (
     <section className="py-20 bg-muted/50">
@@ -7,31 +27,7 @@ export function BrandConcept() {
             我們理解毛孩家長的痛點
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="space-y-4">
-              <div className="text-4xl">😰</div>
-              <h3 className="text-xl font-semibold">資訊不透明</h3>
-              <p className="text-muted-foreground">
-                網路上的評價真假難辨，不知道哪些地方真的對毛孩友善。
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="text-4xl">🤐</div>
-              <h3 className="text-xl font-semibold">不敢說真話</h3>
-              <p className="text-muted-foreground">
-                擔心留下負評會被報復，或者不知道該在哪裡分享經驗。
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="text-4xl">⏰</div>
-              <h3 className="text-xl font-semibold">後悔來不及</h3>
-              <p className="text-muted-foreground">
-                等到發生問題才知道某個地方有風險，但已經太遲了。
-              </p>
-            </div>
-          </div>
+          <FeatureGrid features={painPoints} className="mt-12" />
           
           <div className="mt-16 p-8 bg-background rounded-2xl border">
             <h3 className="text-2xl font-bold mb-4">我們的願景</h3>

@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { Apple, Smartphone } from "lucide-react"
+import { AppDownloadButtons } from "@/components/shared"
 
 export function AppDownloadCTA() {
   return (
@@ -18,24 +17,7 @@ export function AppDownloadCTA() {
               完全免費，現在就開始使用。
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="gap-2"
-              >
-                <Apple className="w-5 h-5" />
-                App Store
-              </Button>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="gap-2"
-              >
-                <Smartphone className="w-5 h-5" />
-                Google Play
-              </Button>
-            </div>
+            <AppDownloadButtons variant="secondary" />
             
             <p className="text-sm opacity-75">
               支援 iOS 14+ 與 Android 8+

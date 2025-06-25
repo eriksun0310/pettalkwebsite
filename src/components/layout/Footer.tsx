@@ -5,6 +5,7 @@ import { BrandLogo, SocialLinks, ContactItem } from "@/components/shared"
 const navigationLinks = [
   { name: "首頁", href: "/" },
   { name: "App 功能", href: "/app" },
+  { name: "許願池", href: "/wishes" },
   { name: "關於我們", href: "/about" },
   { name: "聯絡我們", href: "/contact" },
 ]

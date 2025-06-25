@@ -17,6 +17,7 @@ import {
 const navigation = [
   { name: "首頁", href: "/" },
   { name: "App 功能", href: "/app" },
+  { name: "許願池", href: "/wishes" },
   { name: "關於我們", href: "/about" },
   { name: "聯絡我們", href: "/contact" },
 ]
@@ -35,9 +36,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-110 transform hover:-translate-y-0.5 relative group"
               >
-                {item.name}
+                <span className="relative z-10">{item.name}</span>
+                <span className="absolute inset-0 bg-primary/10 rounded-md scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></span>
               </Link>
             ))}
           </nav>
@@ -65,10 +67,11 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-sm font-medium transition-colors hover:text-primary"
+                      className="text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 transform hover:translate-x-2 relative group p-2 rounded-md"
                       onClick={() => setIsOpen(false)}
                     >
-                      {item.name}
+                      <span className="relative z-10">{item.name}</span>
+                      <span className="absolute inset-0 bg-primary/10 rounded-md scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></span>
                     </Link>
                   ))}
                 </nav>

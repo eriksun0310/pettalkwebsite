@@ -1,66 +1,74 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+本檔案為 Claude Code (claude.ai/code) 在此專案中工作時的指引文件。
 
-## Project Overview
+## 專案概述
 
-Pet Talk - A pet-friendly location review and warning platform website built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui.
+Pet Talk - 採用 Next.js、TypeScript、Tailwind CSS 和 shadcn/ui 構建的寵物友善場所評價與警示平台網站。
 
-## Tech Stack
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Components**: shadcn/ui
-- **Theme**: Dark/Light mode with next-themes
-- **Icons**: Lucide React
+## 技術架構
+- **框架**: Next.js 15 with App Router
+- **語言**: TypeScript
+- **樣式**: Tailwind CSS
+- **元件庫**: shadcn/ui
+- **主題**: 使用 next-themes 的深色/淺色模式
+- **圖標**: Lucide React
+- **動畫**: Framer Motion（頁面過渡與交互效果）
 
-## Development Commands
+## 開發指令
 ```bash
-npm run dev          # Start development server (http://localhost:3000)
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint (if configured)
+npm run dev          # 啟動開發伺服器 (http://localhost:3000)
+npm run build        # 建置生產版本
+npm run start        # 啟動生產伺服器
+npm run lint         # 執行 ESLint 檢查
 ```
 
-## Project Structure
+## 專案結構
 
 ```
 src/
-├── app/                  # Next.js App Router pages
-│   ├── page.tsx         # Home page
-│   ├── app/page.tsx     # App features page  
-│   ├── about/page.tsx   # About us page
-│   ├── contact/page.tsx # Contact page
-│   ├── layout.tsx       # Root layout with theme provider
-│   └── globals.css      # Global styles with theme variables
+├── app/                     # Next.js App Router 頁面
+│   ├── page.tsx            # 首頁
+│   ├── app/page.tsx        # App 功能頁面
+│   ├── wishes/             # 許願池功能
+│   │   ├── page.tsx        # 許願池主頁面
+│   │   └── wishes-client.tsx # 許願池客戶端元件
+│   ├── about/page.tsx      # 關於我們頁面
+│   ├── contact/page.tsx    # 聯絡我們頁面
+│   ├── layout.tsx          # 根佈局含主題提供者
+│   └── globals.css         # 全域樣式含主題變數
 ├── components/
-│   ├── shared/          # Reusable shared components
-│   │   ├── FAQItem.tsx  # Q&A question-answer component
-│   │   ├── FeatureGrid.tsx # Three-column feature grid
-│   │   ├── AppDownloadButtons.tsx # App store download buttons
-│   │   ├── SocialLinks.tsx # Social media links
-│   │   ├── BrandLogo.tsx # Pet Talk logo component
-│   │   ├── PageHeader.tsx # Page title and subtitle
-│   │   ├── ContactItem.tsx # Contact information item
-│   │   └── index.ts     # Shared components export
-│   ├── layout/          # Layout components
-│   │   ├── Header.tsx   # Navigation with theme toggle
-│   │   └── Footer.tsx   # Site footer
-│   ├── home/           # Home page components
+│   ├── shared/             # 可重用共享元件
+│   │   ├── FAQItem.tsx     # 問答元件
+│   │   ├── FeatureGrid.tsx # 三欄特色網格
+│   │   ├── AppDownloadButtons.tsx # 應用程式下載按鈕
+│   │   ├── SocialLinks.tsx # 社群媒體連結
+│   │   ├── BrandLogo.tsx   # Pet Talk 標誌元件
+│   │   ├── PageHeader.tsx  # 頁面標題與副標題
+│   │   ├── ContactItem.tsx # 聯絡資訊項目
+│   │   └── index.ts        # 共享元件匯出
+│   ├── layout/             # 佈局元件
+│   │   ├── Header.tsx      # 導航列含主題切換
+│   │   └── Footer.tsx      # 網站頁尾
+│   ├── home/              # 首頁元件
 │   │   ├── Hero.tsx
 │   │   ├── BrandConcept.tsx
 │   │   ├── Features.tsx
 │   │   ├── Testimonials.tsx
 │   │   └── AppDownloadCTA.tsx
-│   ├── app-features/   # App features page components
+│   ├── app-features/      # App 功能頁面元件
 │   │   └── FeatureCard.tsx
-│   ├── about/          # About page components
+│   ├── about/             # 關於頁面元件
 │   │   ├── BrandStory.tsx
 │   │   └── CharacterCard.tsx
-│   ├── contact/        # Contact page components
+│   ├── contact/           # 聯絡頁面元件
 │   │   ├── ContactForm.tsx
 │   │   └── ContactInfo.tsx
-│   ├── ui/             # shadcn/ui components
+│   ├── wishes/            # 許願池元件
+│   │   ├── WishCardNew.tsx      # 願望卡片元件
+│   │   ├── AddWishSectionNew.tsx # 新增願望區塊
+│   │   └── index.ts             # 許願池元件匯出
+│   ├── ui/                # shadcn/ui 元件
 │   │   ├── button.tsx
 │   │   ├── card.tsx
 │   │   ├── form.tsx
@@ -69,100 +77,158 @@ src/
 │   │   ├── textarea.tsx
 │   │   ├── sheet.tsx
 │   │   ├── dropdown-menu.tsx
+│   │   ├── badge.tsx
+│   │   ├── select.tsx
 │   │   └── theme-toggle.tsx
-│   └── providers/      # Context providers
+│   └── providers/         # Context 提供者
 │       └── theme-provider.tsx
+├── contexts/              # React Context
+│   └── WishContext.tsx    # 許願池資料管理
 ├── lib/
-│   ├── utils.ts        # Utility functions (cn helper)
-│   └── constants.ts    # App data (characters, features, testimonials)
+│   ├── utils.ts          # 工具函數 (cn helper)
+│   ├── constants.ts      # 應用程式資料
+│   └── wishes/           # 許願池相關
+│       ├── types.ts      # 許願池類型定義
+│       ├── utils.ts      # 許願池工具函數
+│       └── mockData.ts   # 模擬資料
 └── types/
-    └── index.ts        # TypeScript type definitions
+    └── index.ts          # TypeScript 類型定義
 ```
 
-## Key Features
+## 主要功能
 
-### Pages
-1. **Home (/)** - Landing page with hero, brand concept, features, testimonials, CTA
-2. **App Features (/app)** - Detailed app functionality showcase  
-3. **About (/about)** - Brand story and character introductions
-4. **Contact (/contact)** - Contact form and information
+### 頁面
+1. **首頁 (/)** - 包含英雄區塊、品牌理念、功能介紹、使用者見證、行動呼籲的登陸頁面
+2. **App 功能 (/app)** - 詳細的應用程式功能展示
+3. **許願池 (/wishes)** - 功能需求投票與願望提交系統
+4. **關於我們 (/about)** - 品牌故事與角色介紹
+5. **聯絡我們 (/contact)** - 聯絡表單與資訊
 
-### Characters
-- **老實說狗狗** (Honest Dog) - "對的我會推薦，爛的我會直接吠！"
-- **老實說貓貓** (Honest Cat) - "我不多話，但我說的你最好聽清楚。"
+### 角色設定
+- **老實說狗狗** (誠實狗) - "對的我會推薦，爛的我會直接吠！"
+- **老實說貓貓** (誠實貓) - "我不多話，但我說的你最好聽清楚。"
 
-### Core Features
-- **評價地圖** - Pet-friendly location reviews and maps
-- **匿名發文** - Anonymous review posting with privacy protection
-- **警示等級** - Safety warning system for locations  
-- **狗狗成長階段推薦** - Age-appropriate recommendations
+### 核心功能
+- **評價地圖** - 寵物友善場所評價與地圖
+- **匿名發文** - 隱私保護的匿名評價發布
+- **警示等級** - 場所安全警示系統
+- **狗狗成長階段推薦** - 適齡推薦功能
+- **許願池系統** - 功能需求收集與投票
 
-### Theme System
-- Uses next-themes for dark/light mode switching
-- Theme toggle button in header
-- CSS custom properties for theme variables
-- Supports system theme detection
+### 主題系統
+- 使用 next-themes 進行深色/淺色模式切換
+- Header 中的主題切換按鈕
+- CSS 自訂屬性作為主題變數
+- 支援系統主題自動偵測
 
-## Data Management
-- Static data stored in `src/lib/constants.ts`
-- Placeholder images from placehold.co
-- TypeScript interfaces in `src/types/index.ts`
+### 交互效果
+- Header 導航連結 hover 效果（放大、移動、背景漸變）
+- 許願池特色背景設計（淺色與暗色模式不同配色）
+- 響應式設計與動畫效果
 
-## Styling Notes
-- Uses Tailwind utility classes
-- shadcn/ui provides consistent component styling
-- Responsive design with mobile-first approach
-- Custom theme variables for consistent branding
+## 資料管理
+- 靜態資料儲存於 `src/lib/constants.ts`
+- 佔位圖片來自 placehold.co
+- TypeScript 介面定義於 `src/types/index.ts`
+- 許願池資料透過 React Context 管理 (`src/contexts/WishContext.tsx`)
+- 模擬資料與類型定義位於 `src/lib/wishes/`
 
-## Shared Components Architecture
+## 樣式說明
+- 使用 Tailwind CSS 工具類別
+- shadcn/ui 提供一致的元件樣式
+- 採用行動優先的響應式設計
+- 自訂主題變數確保品牌一致性
+- 許願池頁面特殊漸層背景設計
+- 深色模式下的文字對比度優化
 
-The project follows a modular component architecture to reduce code duplication:
+## 共享元件架構
 
-### Reusable Components (`src/components/shared/`)
+專案採用模組化元件架構以減少程式碼重複：
 
-- **FAQItem** - Question and answer format component
-- **FeatureGrid** - Three-column feature layout with icon, title, description
-- **AppDownloadButtons** - App Store and Google Play download buttons
-- **SocialLinks** - Instagram and Facebook links with configurable layout
-- **BrandLogo** - Pet Talk logo with optional link
-- **PageHeader** - Page title and subtitle section
-- **ContactItem** - Contact information display with icon and content
+### 可重用元件 (`src/components/shared/`)
 
-### Usage Examples
+- **FAQItem** - 問答格式元件
+- **FeatureGrid** - 三欄特色佈局含圖標、標題、描述
+- **AppDownloadButtons** - App Store 與 Google Play 下載按鈕
+- **SocialLinks** - Instagram 與 Facebook 連結，可配置佈局
+- **BrandLogo** - Pet Talk 標誌，可選連結
+- **PageHeader** - 頁面標題與副標題區塊
+- **ContactItem** - 聯絡資訊顯示含圖標與內容
+
+### 許願池專用元件 (`src/components/wishes/`)
+
+- **WishCardNew** - 願望卡片元件，支援排名顯示與投票功能
+- **AddWishSectionNew** - 新增願望區塊，含表單驗證
+
+### 使用範例
 
 ```tsx
-// Import from shared components
+// 從共享元件匯入
 import { PageHeader, FeatureGrid, AppDownloadButtons } from "@/components/shared"
 
-// Use PageHeader for consistent page titles
+// 使用 PageHeader 建立一致的頁面標題
 <PageHeader 
   title="頁面標題" 
   subtitle="副標題描述" 
   className="mb-16" 
 />
 
-// Use FeatureGrid for three-column layouts
+// 使用 FeatureGrid 建立三欄佈局
 const features = [
   { icon: "🎯", title: "標題", description: "描述" }
 ]
 <FeatureGrid features={features} />
 
-// Use AppDownloadButtons for app download sections
+// 使用 AppDownloadButtons 建立應用程式下載區塊
 <AppDownloadButtons variant="secondary" />
+
+// 許願池元件使用
+import { WishCardNew, AddWishSectionNew } from "@/components/wishes"
+
+<WishCardNew
+  wish={wishData}
+  rank={1}
+  hasVoted={false}
+  onVote={handleVote}
+/>
 ```
 
-### Benefits of This Architecture
+### 此架構的優勢
 
-1. **DRY Principle** - Eliminates code duplication across pages
-2. **Consistency** - Ensures uniform UI patterns
-3. **Maintainability** - Changes to shared components update everywhere
-4. **Type Safety** - TypeScript interfaces ensure proper prop usage
-5. **Reusability** - Components can be easily reused in new features
+1. **DRY 原則** - 消除跨頁面的程式碼重複
+2. **一致性** - 確保統一的 UI 模式
+3. **可維護性** - 共享元件的變更會自動更新到所有地方
+4. **型別安全** - TypeScript 介面確保正確的 prop 使用
+5. **可重用性** - 元件可輕鬆重用於新功能
+6. **響應式設計** - 所有元件支援行動與桌面裝置
+7. **主題支援** - 完整的深色/淺色模式支援
 
-## Adding New Features
-1. Check if needed UI pattern exists in `src/components/shared/`
-2. If reusable, create new shared component with TypeScript interface
-3. Create page-specific components in appropriate subfolder under `src/components/`
-4. Add any data to `src/lib/constants.ts`
-5. Define TypeScript types in `src/types/index.ts`
-6. Import and use in relevant page components
+## 新增功能指南
+1. 檢查 `src/components/shared/` 中是否已有所需的 UI 模式
+2. 如可重用，建立新的共享元件並提供 TypeScript 介面
+3. 在 `src/components/` 的適當子資料夾中建立頁面專用元件
+4. 將資料加入 `src/lib/constants.ts` 或相關資料檔案
+5. 在 `src/types/index.ts` 或功能專用檔案中定義 TypeScript 類型
+6. 在相關頁面元件中匯入並使用
+7. 考慮深色/淺色模式的樣式適配
+8. 新增適當的 hover 效果與交互動畫
+
+## 許願池功能特色
+
+### 核心功能
+- **投票系統** - 使用者可對功能需求進行投票
+- **排名顯示** - 依票數自動排序，前三名有特殊視覺效果
+- **願望提交** - 使用者可提交新的功能需求
+- **即時更新** - 使用 React Context 管理狀態
+
+### 視覺設計
+- **漸層背景** - 粉紅-橙-黃漸層營造溫暖氛圍
+- **排名徽章** - 前三名有獎杯、獎牌、獎章圖標
+- **響應式卡片** - 支援桌面與行動裝置的最佳顯示
+- **暗色模式適配** - 文字對比度優化確保可讀性
+
+### 技術實作
+- **Context API** - 統一管理許願池狀態
+- **Local Storage** - 記住使用者投票狀態
+- **表單驗證** - 使用 react-hook-form + zod 驗證
+- **動畫效果** - 卡片 hover 與按鈕交互效果

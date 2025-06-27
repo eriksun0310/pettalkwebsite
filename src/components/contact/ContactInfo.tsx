@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Clock, MapPin } from "lucide-react"
 import { ContactItem, SocialLinks } from "@/components/shared"
+import { CONTACT_INFO } from "@/lib/constants"
 
 export function ContactInfo() {
   return (
@@ -15,10 +16,10 @@ export function ContactInfo() {
             label="Email"
             content={
               <a
-                href="mailto:contact@pettalk.com"
+                href={`mailto:${CONTACT_INFO.email}`}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                contact@pettalk.com
+                {CONTACT_INFO.email}
               </a>
             }
           />
@@ -26,13 +27,13 @@ export function ContactInfo() {
           <ContactItem
             icon={<Clock className="w-5 h-5" />}
             label="回覆時間"
-            content="週一至週五 9:00-18:00"
+            content={CONTACT_INFO.businessHours}
           />
           
           <ContactItem
             icon={<MapPin className="w-5 h-5" />}
             label="總部位置"
-            content="台北市信義區"
+            content={CONTACT_INFO.location}
           />
         </CardContent>
       </Card>

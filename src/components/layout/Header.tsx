@@ -6,6 +6,7 @@ import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { BrandLogo } from "@/components/shared"
+import { NAVIGATION_ITEMS } from "@/lib/constants"
 import {
   Sheet,
   SheetContent,
@@ -14,13 +15,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
-const navigation = [
-  { name: "首頁", href: "/" },
-  { name: "App 功能", href: "/app" },
-  { name: "許願池", href: "/wishes" },
-  { name: "關於我們", href: "/about" },
-  { name: "聯絡我們", href: "/contact" },
-]
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,7 +26,7 @@ export function Header() {
           <BrandLogo href="/" />
 
           <nav className="hidden md:flex items-center space-x-6">
-            {navigation.map((item) => (
+            {NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -63,7 +57,7 @@ export function Header() {
                   <SheetTitle>選單</SheetTitle>
                 </SheetHeader>
                 <nav className="mt-6 flex flex-col space-y-4">
-                  {navigation.map((item) => (
+                  {NAVIGATION_ITEMS.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}

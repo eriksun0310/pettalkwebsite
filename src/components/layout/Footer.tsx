@@ -1,14 +1,8 @@
 import Link from "next/link"
 import { Mail } from "lucide-react"
 import { BrandLogo, SocialLinks, ContactItem } from "@/components/shared"
+import { NAVIGATION_ITEMS, BRAND_COPY, CONTACT_INFO } from "@/lib/constants"
 
-const navigationLinks = [
-  { name: "首頁", href: "/" },
-  { name: "App 功能", href: "/app" },
-  { name: "許願池", href: "/wishes" },
-  { name: "關於我們", href: "/about" },
-  { name: "聯絡我們", href: "/contact" },
-]
 
 export function Footer() {
   return (
@@ -18,16 +12,16 @@ export function Footer() {
           <div className="space-y-4">
             <BrandLogo href={undefined} />
             <p className="text-muted-foreground">
-              讓不會說話的牠，也能被好好守護。
+              {BRAND_COPY.tagline}
               <br />
-              用十幾年的陪伴，我們守護牠的每一次選擇。
+              {BRAND_COPY.subtitle}
             </p>
           </div>
           
           <div className="space-y-4">
             <h3 className="font-semibold">快速連結</h3>
             <nav className="flex flex-col space-y-2">
-              {navigationLinks.map((link) => (
+              {NAVIGATION_ITEMS.map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
@@ -45,8 +39,8 @@ export function Footer() {
               <ContactItem
                 icon={<Mail className="w-4 h-4" />}
                 label="Email"
-                content="contact@pettalk.com"
-                href="mailto:contact@pettalk.com"
+                content={CONTACT_INFO.email}
+                href={`mailto:${CONTACT_INFO.email}`}
               />
               <SocialLinks />
             </div>

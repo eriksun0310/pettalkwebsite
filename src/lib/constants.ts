@@ -159,3 +159,49 @@ export const testimonials: Testimonial[] = [
     date: "2024-01-25",
   },
 ];
+
+// 導航選單
+export const NAVIGATION_ITEMS = [
+  { name: "首頁", href: "/" },
+  { name: "App 功能", href: "/app" },
+  { name: "許願池", href: "/wishes" },
+  { name: "關於我們", href: "/about" },
+  { name: "聯絡我們", href: "/contact" },
+];
+
+// 聯絡資訊
+export const CONTACT_INFO = {
+  email: "contact@pettalk.com",
+  businessHours: "週一至週五 9:00-18:00",
+  location: "台北市信義區",
+  social: {
+    instagram: {
+      handle: "@pettalk_official",
+      url: "https://instagram.com/pettalk_official"
+    },
+    facebook: {
+      name: "Pet Talk 官方粉絲團",
+      url: "https://facebook.com/pettalk.taiwan"
+    }
+  }
+};
+
+// 品牌文案
+export const BRAND_COPY = {
+  tagline: "讓不會說話的牠，也能被好好守護。",
+  subtitle: "用十幾年的陪伴，我們守護牠的每一次選擇。",
+  description: "寵物友善場所評價與警示平台，讓每一位毛孩家長都能安心選擇、勇敢分享、彼此守護。",
+  cta: {
+    download: "立即下載 Pet Talk",
+    free: "完全免費，馬上開始",
+    freeAlt: "完全免費，現在就加入我們的行列！"
+  }
+};
+
+// 角色名稱
+export const CHARACTER_NAMES = {
+  dog: "老實說狗狗",
+  cat: "老實說貓貓",
+  angryPoop: "氣氣屎",
+  grumpyPoop: "憤憤屎"
+};

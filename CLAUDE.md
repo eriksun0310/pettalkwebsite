@@ -289,6 +289,74 @@ const features = [
 - **禁止** 重複的表單欄位結構，請使用 `<FormField>`
 - **禁止** 建立功能相似的重複元件
 - **禁止** 在沒有檢查共享元件的情況下建立新元件
+- **禁止** 硬編碼重複的資料（導航、聯絡資訊、品牌文案等），請使用 `src/lib/constants.ts` 中的共用常數
+
+## 共用常數和資料管理
+
+### 📋 可用的共用常數
+
+專案中所有重複的資料都已抽取到 `src/lib/constants.ts` 中：
+
+#### 🧭 導航相關
+```tsx
+import { NAVIGATION_ITEMS } from "@/lib/constants"
+
+// 使用統一的導航選單
+{NAVIGATION_ITEMS.map((item) => (
+  <Link key={item.name} href={item.href}>
+    {item.name}
+  </Link>
+))}
+```
+
+#### 📞 聯絡資訊
+```tsx
+import { CONTACT_INFO } from "@/lib/constants"
+
+// Email
+<a href={`mailto:${CONTACT_INFO.email}`}>
+  {CONTACT_INFO.email}
+</a>
+
+// 營業時間
+<span>{CONTACT_INFO.businessHours}</span>
+
+// 社群媒體
+<a href={CONTACT_INFO.social.instagram.url}>
+  {CONTACT_INFO.social.instagram.handle}
+</a>
+```
+
+#### 🎨 品牌文案
+```tsx
+import { BRAND_COPY } from "@/lib/constants"
+
+// 主標語
+<h1>{BRAND_COPY.tagline}</h1>
+
+// 副標題
+<p>{BRAND_COPY.subtitle}</p>
+
+// CTA 按鈕
+<Button>{BRAND_COPY.cta.download}</Button>
+```
+
+#### 👥 角色名稱
+```tsx
+import { CHARACTER_NAMES } from "@/lib/constants"
+
+// 使用統一的角色名稱
+<span>{CHARACTER_NAMES.dog}</span>
+<span>{CHARACTER_NAMES.cat}</span>
+```
+
+### 🎯 使用共用常數的優勢
+
+1. **一致性保證** - 全站使用相同的文案和資料
+2. **維護便利** - 只需在一個地方更新內容
+3. **減少錯誤** - 避免手動複製造成的不一致
+4. **類型安全** - TypeScript 確保資料結構正確
+5. **易於國際化** - 未來可輕鬆支援多語言
 
 ## 許願池功能特色
 

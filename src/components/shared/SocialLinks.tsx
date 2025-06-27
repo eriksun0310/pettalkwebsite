@@ -1,4 +1,5 @@
 import { Instagram, Facebook } from "lucide-react"
+import { CONTACT_INFO } from "@/lib/constants"
 
 interface SocialLinksProps {
   layout?: "horizontal" | "vertical"
@@ -18,20 +19,24 @@ export function SocialLinks({
   return (
     <div className={`${containerClass} ${className}`}>
       <a
-        href="#"
+        href={CONTACT_INFO.social.instagram.url}
         className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
         aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Instagram className="w-5 h-5" />
-        {showLabels && <span>@pettalk_official</span>}
+        {showLabels && <span>{CONTACT_INFO.social.instagram.handle}</span>}
       </a>
       <a
-        href="#"
+        href={CONTACT_INFO.social.facebook.url}
         className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
         aria-label="Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Facebook className="w-5 h-5" />
-        {showLabels && <span>Pet Talk 官方粉絲團</span>}
+        {showLabels && <span>{CONTACT_INFO.social.facebook.name}</span>}
       </a>
     </div>
   )

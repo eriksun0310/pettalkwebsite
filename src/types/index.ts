@@ -1,10 +1,12 @@
 export interface Character {
   id: string
   name: string
-  type: 'dog' | 'cat'
+  type: 'dog' | 'cat' | 'warning'
   personality: string
   quote: string
   image: string
+  emoji?: string
+  role?: string
 }
 
 export interface Feature {

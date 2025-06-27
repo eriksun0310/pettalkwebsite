@@ -3,9 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { FormField } from "@/components/shared"
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -28,43 +26,36 @@ export function ContactForm() {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="name">姓名</Label>
-            <Input
-              id="name"
-              placeholder="請輸入您的姓名"
-              required
-            />
-          </div>
+          <FormField
+            id="name"
+            label="姓名"
+            placeholder="請輸入您的姓名"
+            required
+          />
           
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="請輸入您的 Email"
-              required
-            />
-          </div>
+          <FormField
+            id="email"
+            type="email"
+            label="Email"
+            placeholder="請輸入您的 Email"
+            required
+          />
           
-          <div className="space-y-2">
-            <Label htmlFor="subject">主旨</Label>
-            <Input
-              id="subject"
-              placeholder="請輸入主旨"
-              required
-            />
-          </div>
+          <FormField
+            id="subject"
+            label="主旨"
+            placeholder="請輸入主旨"
+            required
+          />
           
-          <div className="space-y-2">
-            <Label htmlFor="message">留言內容</Label>
-            <Textarea
-              id="message"
-              placeholder="請輸入您的留言..."
-              rows={6}
-              required
-            />
-          </div>
+          <FormField
+            id="message"
+            type="textarea"
+            label="留言內容"
+            placeholder="請輸入您的留言..."
+            rows={6}
+            required
+          />
           
           <Button
             type="submit"

@@ -2,6 +2,9 @@
 
 本檔案為 Claude Code (claude.ai/code) 在此專案中工作時的指引文件。
 
+## 重要指示
+- **所有回復都必須使用繁體中文**
+
 ## 專案概述
 
 Pet Talk - 採用 Next.js、TypeScript、Tailwind CSS 和 shadcn/ui 構建的寵物友善場所評價與警示平台網站。
@@ -145,14 +148,25 @@ src/
 
 專案採用模組化元件架構以減少程式碼重複：
 
-### 可重用元件 (`src/components/shared/`)
+### 🏗️ 佈局與結構元件
+
+- **PageLayout** - 統一頁面結構（Header + main + Footer）
+- **Section** - 標準化區塊容器，支援背景色和內距變體
+- **PageHeader** - 頁面標題與副標題區塊
+- **ContentCard** - 統一卡片樣式，支援多種變體
+
+### 📝 表單元件
+
+- **FormField** - 統一表單欄位，支援 input/textarea/自訂元件
+- **ButtonGroup** - 按鈕群組，支援主要與次要按鈕組合
+
+### 🔄 可重用功能元件
 
 - **FAQItem** - 問答格式元件
 - **FeatureGrid** - 三欄特色佈局含圖標、標題、描述
 - **AppDownloadButtons** - App Store 與 Google Play 下載按鈕
 - **SocialLinks** - Instagram 與 Facebook 連結，可配置佈局
 - **BrandLogo** - Pet Talk 標誌，可選連結
-- **PageHeader** - 頁面標題與副標題區塊
 - **ContactItem** - 聯絡資訊顯示含圖標與內容
 
 ### 許願池專用元件 (`src/components/wishes/`)
@@ -162,35 +176,75 @@ src/
 
 ### 使用範例
 
-```tsx
-// 從共享元件匯入
-import { PageHeader, FeatureGrid, AppDownloadButtons } from "@/components/shared"
+#### 🏗️ 頁面結構
 
-// 使用 PageHeader 建立一致的頁面標題
-<PageHeader 
-  title="頁面標題" 
-  subtitle="副標題描述" 
-  className="mb-16" 
+```tsx
+import { PageLayout, Section, PageHeader } from "@/components/shared"
+
+export default function SamplePage() {
+  return (
+    <PageLayout>
+      <Section padding="xl">
+        <PageHeader 
+          title="頁面標題" 
+          subtitle="副標題描述" 
+        />
+      </Section>
+      
+      <Section background="muted">
+        {/* 內容區塊 */}
+      </Section>
+    </PageLayout>
+  )
+}
+```
+
+#### 📝 表單建立
+
+```tsx
+import { FormField, ButtonGroup } from "@/components/shared"
+
+<FormField
+  id="email"
+  type="email"
+  label="Email"
+  placeholder="請輸入 Email"
+  required
 />
 
-// 使用 FeatureGrid 建立三欄佈局
+<FormField
+  id="message"
+  type="textarea"
+  label="留言"
+  placeholder="請輸入留言..."
+  rows={6}
+/>
+
+<ButtonGroup
+  primaryButton={{ text: "送出", onClick: handleSubmit }}
+  secondaryButton={{ text: "重設", onClick: handleReset }}
+/>
+```
+
+#### 🔄 功能元件
+
+```tsx
+import { FeatureGrid, ContentCard, AppDownloadButtons } from "@/components/shared"
+
+// 三欄特色佈局
 const features = [
   { icon: "🎯", title: "標題", description: "描述" }
 ]
 <FeatureGrid features={features} />
 
-// 使用 AppDownloadButtons 建立應用程式下載區塊
+// 內容卡片
+<ContentCard variant="muted" padding="lg">
+  <h3>卡片標題</h3>
+  <p>卡片內容...</p>
+</ContentCard>
+
+// 下載按鈕
 <AppDownloadButtons variant="secondary" />
-
-// 許願池元件使用
-import { WishCardNew, AddWishSectionNew } from "@/components/wishes"
-
-<WishCardNew
-  wish={wishData}
-  rank={1}
-  hasVoted={false}
-  onVote={handleVote}
-/>
 ```
 
 ### 此架構的優勢
@@ -204,14 +258,37 @@ import { WishCardNew, AddWishSectionNew } from "@/components/wishes"
 7. **主題支援** - 完整的深色/淺色模式支援
 
 ## 新增功能指南
-1. 檢查 `src/components/shared/` 中是否已有所需的 UI 模式
-2. 如可重用，建立新的共享元件並提供 TypeScript 介面
-3. 在 `src/components/` 的適當子資料夾中建立頁面專用元件
-4. 將資料加入 `src/lib/constants.ts` 或相關資料檔案
-5. 在 `src/types/index.ts` 或功能專用檔案中定義 TypeScript 類型
-6. 在相關頁面元件中匯入並使用
-7. 考慮深色/淺色模式的樣式適配
-8. 新增適當的 hover 效果與交互動畫
+
+### 📋 開發檢查清單
+
+1. **優先使用共享元件**
+   - 檢查 `src/components/shared/` 中是否已有所需的 UI 模式
+   - 優先使用 `PageLayout`、`Section`、`FormField` 等佈局元件
+   - 避免重複的 section/container 結構
+
+2. **建立新元件**
+   - 如需新功能，優先考慮是否可建立共享元件
+   - 在 `src/components/shared/` 建立可重用元件
+   - 在 `src/components/shared/index.ts` 中匯出新元件
+   - 提供完整的 TypeScript 介面
+
+3. **資料管理**
+   - 將靜態資料加入 `src/lib/constants.ts`
+   - 在 `src/types/index.ts` 中定義 TypeScript 類型
+   - 考慮是否需要 Context 或其他狀態管理
+
+4. **樣式與互動**
+   - 確保深色/淺色模式相容性
+   - 添加適當的 hover 效果與動畫
+   - 遵循響應式設計原則
+
+### 🚫 避免的反模式
+
+- **禁止** 直接使用 `<Header />` + `<Footer />` 包裝，請使用 `<PageLayout>`
+- **禁止** 重複的 `<section className="py-20"><div className="container..."`，請使用 `<Section>`
+- **禁止** 重複的表單欄位結構，請使用 `<FormField>`
+- **禁止** 建立功能相似的重複元件
+- **禁止** 在沒有檢查共享元件的情況下建立新元件
 
 ## 許願池功能特色
 

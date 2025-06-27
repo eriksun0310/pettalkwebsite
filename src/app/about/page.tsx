@@ -1,9 +1,7 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { BrandStory } from "@/components/about/BrandStory";
-import { CharacterCard } from "@/components/about/CharacterCard";
-import { PageHeader, FeatureGrid } from "@/components/shared";
-import { characters } from "@/lib/constants";
+import { CharacterCarousel } from "@/components/about/CharacterCarousel";
+import { PageHeader, FeatureGrid, PageLayout, Section } from "@/components/shared";
+import { characters, warningCharacters } from "@/lib/constants";
 
 const commitments = [
   {
@@ -30,47 +28,40 @@ const commitments = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <section className="py-20 lg:py-32">
-          <div className="container mx-auto px-4">
-            <PageHeader
-              title="關於 Pet Talk"
-              subtitle="因為牠不會說話，我們願意多說一點。"
-            />
-          </div>
-        </section>
+    <PageLayout>
+      <Section padding="xl">
+        <PageHeader
+          title="關於 Pet Talk"
+          subtitle="因為牠不會說話，我們願意多說一點。"
+        />
+      </Section>
 
         <BrandStory />
 
-        <section className="py-20 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <PageHeader
-              title="認識我們的角色大使"
-              subtitle="兩位正義感滿滿的毛孩代言人"
-              className="mb-16"
-            />
+      <Section background="muted">
+        <PageHeader
+          title="認識我們的角色大使"
+          subtitle="兩位正義感滿滿的毛孩代言人"
+          className="mb-16"
+        />
+        <CharacterCarousel characters={characters} />
+      </Section>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {characters.map((character) => (
-                <CharacterCard key={character.id} character={character} />
-              ))}
-            </div>
-          </div>
-        </section>
+      <Section>
+        <PageHeader
+          title="誰在地圖上提醒你？"
+          subtitle="牠們出現時，代表這裡有些需要注意的事……"
+          className="mb-16"
+        />
+        <CharacterCarousel characters={warningCharacters} />
+      </Section>
 
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">我們的承諾</h2>
-
-              <FeatureGrid features={commitments} />
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+      <Section>
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold">我們的承諾</h2>
+          <FeatureGrid features={commitments} />
+        </div>
+      </Section>
+    </PageLayout>
   );
 }

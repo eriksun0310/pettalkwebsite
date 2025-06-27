@@ -1,8 +1,6 @@
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
 import { ContactForm } from "@/components/contact/ContactForm"
 import { ContactInfo } from "@/components/contact/ContactInfo"
-import { PageHeader, FAQItem } from "@/components/shared"
+import { PageHeader, FAQItem, PageLayout, Section } from "@/components/shared"
 
 const faqData = [
   {
@@ -25,45 +23,35 @@ const faqData = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <section className="py-20 lg:py-32">
-          <div className="container mx-auto px-4">
-            <PageHeader
-              title="聯絡我們"
-              subtitle="有任何問題或建議嗎？我們很樂意聽到您的聲音！請填寫下方表單，我們會盡快回覆您。"
-              className="mb-16"
-            />
-            
-            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              <ContactForm />
-              <ContactInfo />
-            </div>
-          </div>
-        </section>
+    <PageLayout>
+      <Section padding="xl">
+        <PageHeader
+          title="聯絡我們"
+          subtitle="有任何問題或建議嗎？我們很樂意聽到您的聲音！請填寫下方表單，我們會盡快回覆您。"
+          className="mb-16"
+        />
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <ContactForm />
+          <ContactInfo />
+        </div>
+      </Section>
 
-        <section className="py-20 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                常見問題
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                {faqData.map((faq, index) => (
-                  <FAQItem
-                    key={index}
-                    question={faq.question}
-                    answer={faq.answer}
-                  />
-                ))}
-              </div>
-            </div>
+      <Section background="muted">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            常見問題
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            {faqData.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
           </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        </div>
+      </Section>
+    </PageLayout>
   )
 }

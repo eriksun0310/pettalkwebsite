@@ -33,7 +33,7 @@ export default function AppPage() {
                 現在就下載 Pet Talk
               </h2>
               <p className="text-lg text-muted-foreground">
-                超過 10,000+ 毛孩家長正在使用，立即加入我們的社群！
+                加入我們，一起為毛孩打造更友善的未來。完全免費，馬上開始
               </p>
               <AppDownloadButtons />
             </div>

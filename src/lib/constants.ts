@@ -21,29 +21,26 @@ export const characters: Character[] = [
   },
 ];
 
-// export const features: Feature[] = [
-//   {
-//     id: "map",
-//     title: "地圖探索",
-//     description: "一眼就能看懂哪裡值得去，哪裡要注意。",
-//     icon: "🗺️",
-//     href: "/app#map",
-//   },
-//   {
-//     id: "reviews",
-//     title: "實用評論",
-//     description: "看真實體驗，做安心決定。",
-//     icon: "🔒",
-//     href: "/app#reviews",
-//   },
-//   {
-//     id: "rating",
-//     title: "Pet Talk 評分系統",
-//     description: "即時了解各地點的安全等級，預防潛在風險。",
-//     icon: "⚠️",
-//     href: "/app#rating",
-//   },
-// ];
+export const warningCharacters: Character[] = [
+  {
+    id: "angry-poop",
+    name: "氣氣屎",
+    type: "warning",
+    personality:
+      "爆氣預警員，哪裡讓毛孩不爽，牠就衝第一線踩點通報！出現就代表：這裡氣味不對，得留心。",
+    quote: "你還沒到我先到，爆氣之前先通報！",
+    image: "https://placehold.co/400x400/dc2626/ffffff?text=💢",
+  },
+  {
+    id: "grumpy-poop",
+    name: "憤憤屎",
+    type: "warning",
+    personality:
+      "不爽示警員，看似安靜但觀察入微。牠專挑那種說不上壞、卻哪裡怪怪的地方站崗提醒。",
+    quote: "我話不多，但這地點真的不太妥。",
+    image: "https://placehold.co/400x400/f59e0b/ffffff?text=⚠️",
+  },
+];
 
 export const features: Feature[] = [
   {

@@ -14,7 +14,8 @@ export default function Home() {
         <Hero />
         <BrandConcept />
         <Features />
-        <Testimonials />
+        {/*用戶真實回饋, 等有用戶回饋時再開放 */}
+        {/* <Testimonials /> */}
         <AppDownloadCTA />
       </main>
       <Footer />

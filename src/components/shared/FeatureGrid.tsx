@@ -23,7 +23,7 @@ export function FeatureItem({ icon, title, description }: FeatureItemProps) {
 
 export function FeatureGrid({ features, className = "" }: FeatureGridProps) {
   return (
-    <div className={`grid md:grid-cols-3 gap-8 ${className}`}>
+    <div className={`grid md:grid-cols-4 gap-8 ${className}`}>
       {features.map((feature, index) => (
         <FeatureItem
           key={index}

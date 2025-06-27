@@ -9,9 +9,9 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                讓不會說話的牠，
+                讓不會說話的牠
                 <br />
-                也能被好好守護。
+                也能被好好守護
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
                 用十幾年的陪伴，我們守護牠的每一次選擇。

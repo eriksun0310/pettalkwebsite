@@ -1,8 +1,8 @@
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
-import { FeatureCard } from "@/components/app-features/FeatureCard"
-import { PageHeader, AppDownloadButtons } from "@/components/shared"
-import { appFeatures } from "@/lib/constants"
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { FeatureCard } from "@/components/app-features/FeatureCard";
+import { PageHeader, AppDownloadButtons } from "@/components/shared";
+import { appFeatures } from "@/lib/constants";
 
 export default function AppPage() {
   return (
@@ -13,7 +13,7 @@ export default function AppPage() {
           <div className="container mx-auto px-4">
             <PageHeader
               title="Pet Talk App 功能介紹"
-              subtitle="四大核心功能，全方位守護毛孩安全與健康"
+              subtitle="六大核心功能，讓資訊更透明，選擇更安心。"
             />
           </div>
         </section>
@@ -42,5 +42,5 @@ export default function AppPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

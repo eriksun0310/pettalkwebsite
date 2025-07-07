@@ -28,19 +28,14 @@ export function Hero() {
           </div>
           
           <div className="relative">
-            <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="text-center space-y-2">
-                    <div className="text-6xl">🐕</div>
-                    <p className="text-sm font-medium text-muted-foreground">老實說狗狗</p>
-                  </div>
-                  <div className="text-center space-y-2">
-                    <div className="text-6xl">🐱</div>
-                    <p className="text-sm font-medium text-muted-foreground">老實說貓貓</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden">
+              <Image
+                src="/images/home/home.png"
+                alt="PTalk 角色介紹 - 老實說狗狗與老實說貓貓"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

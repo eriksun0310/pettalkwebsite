@@ -75,7 +75,7 @@ test.describe('響應式設計', () => {
     
     // 滾動到 App 下載區塊
     await page.evaluate(() => {
-      const element = document.querySelector('text=立即下載 Pet Talk');
+      const element = document.querySelector('text=立即下載 PTalk');
       element?.scrollIntoView();
     });
     

@@ -9,7 +9,7 @@ export function AppDownloadCTA() {
             <div className="text-6xl mb-6">🐾</div>
 
             <h2 className="text-3xl md:text-4xl font-bold">
-              立即下載 Pet Talk
+              立即下載 PTalk
             </h2>
 
             <p className="text-lg opacity-90">

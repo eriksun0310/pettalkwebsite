@@ -55,7 +55,7 @@ test.describe('首頁內容', () => {
     await expect(page.locator('text=用戶真實回饋')).toBeVisible();
     
     // 檢查至少有一個見證卡片
-    const testimonialCards = page.locator('[class*="card"]').filter({ hasText: '感謝 Pet Talk' });
+    const testimonialCards = page.locator('[class*="card"]').filter({ hasText: '感謝 PTalk' });
     await expect(testimonialCards).toHaveCount(1);
     
     // 檢查評分星星
@@ -69,7 +69,7 @@ test.describe('首頁內容', () => {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     
     // 檢查標題
-    await expect(page.locator('h2:has-text("立即下載 Pet Talk")')).toBeVisible();
+    await expect(page.locator('h2:has-text("立即下載 PTalk")')).toBeVisible();
     
     // 檢查下載按鈕
     await expect(page.locator('button:has-text("App Store")').last()).toBeVisible();

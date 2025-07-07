@@ -1,4 +1,4 @@
-// Pet Talk 資料結構定義（供後端參考）
+// PTalk 資料結構定義（供後端參考）
 
 // 角色資料
 export interface Character {

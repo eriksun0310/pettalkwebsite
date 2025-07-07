@@ -24,17 +24,17 @@ export function ContactInfo() {
             }
           />
           
-          <ContactItem
+          {/* <ContactItem
             icon={<Clock className="w-5 h-5" />}
             label="回覆時間"
             content={CONTACT_INFO.businessHours}
           />
-          
-          <ContactItem
+           */}
+          {/* <ContactItem
             icon={<MapPin className="w-5 h-5" />}
             label="總部位置"
             content={CONTACT_INFO.location}
-          />
+          /> */}
         </CardContent>
       </Card>
 

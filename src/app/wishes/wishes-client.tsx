@@ -101,7 +101,7 @@ function WishesContent() {
                 還沒有任何願望
               </h3>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                成為第一個許願的人，分享你對 Pet Talk 的想法！
+                成為第一個許願的人，分享你對 PTalk 的想法！
               </p>
             </div>
           ) : (

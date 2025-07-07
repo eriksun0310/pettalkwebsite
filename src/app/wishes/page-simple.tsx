@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '許願池 | Pet Talk',
-  description: '分享您對 Pet Talk 的建議和願望，與其他毛孩家長一起投票支持最需要的功能改進。',
+  title: '許願池 | PTalk',
+  description: '分享您對 PTalk 的建議和願望，與其他毛孩家長一起投票支持最需要的功能改進。',
 }
 
 export default function WishesPage() {
@@ -14,7 +14,7 @@ export default function WishesPage() {
             許願池 🌟
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            分享您的建議，讓 Pet Talk 變得更好
+            分享您的建議，讓 PTalk 變得更好
           </p>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             許願池功能開發完成！包含：願望投票清單、新增願望表單、投票限制機制、票數排序與亮暗色主題支援。

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('網站導航功能', () => {
   test('應該能成功載入首頁', async ({ page }) => {
     await page.goto('/');
-    await expect(page).toHaveTitle(/Pet Talk/);
+    await expect(page).toHaveTitle(/PTalk/);
     await expect(page.locator('h1')).toContainText('讓不會說話的牠');
   });
 
@@ -13,12 +13,12 @@ test.describe('網站導航功能', () => {
     // 測試導航到 App 功能頁
     await page.click('text=App 功能');
     await expect(page).toHaveURL('/app');
-    await expect(page.locator('h1')).toContainText('Pet Talk App 功能介紹');
+    await expect(page.locator('h1')).toContainText('PTalk App 功能介紹');
     
     // 測試導航到關於我們頁
     await page.click('text=關於我們');
     await expect(page).toHaveURL('/about');
-    await expect(page.locator('h1').first()).toContainText('關於 Pet Talk');
+    await expect(page.locator('h1').first()).toContainText('關於 PTalk');
     
     // 測試導航到聯絡我們頁
     await page.click('text=聯絡我們');
@@ -28,7 +28,7 @@ test.describe('網站導航功能', () => {
 
   test('Logo 點擊應該返回首頁', async ({ page }) => {
     await page.goto('/about');
-    await page.locator('text=Pet Talk').first().click();
+    await page.locator('text=PTalk').first().click();
     await expect(page).toHaveURL('/');
   });
 

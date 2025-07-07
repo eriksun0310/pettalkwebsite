@@ -101,7 +101,7 @@
       "id": "1",
       "name": "小明媽媽",
       "avatar": "https://placehold.co/60x60/e0e7ff/6366f1?text=U1",
-      "content": "感謝 Pet Talk！上次帶狗狗去新的美容店之前，先看了評價，果然避開了一家會粗暴對待狗狗的店。",
+      "content": "感謝 PTalk！上次帶狗狗去新的美容店之前，先看了評價，果然避開了一家會粗暴對待狗狗的店。",
       "rating": 5,
       "date": "2024-01-15",
       "petInfo": {
@@ -183,8 +183,8 @@
   "faq": [
     {
       "id": "faq-1",
-      "question": "Pet Talk 是免費的嗎？",
-      "answer": "是的！Pet Talk 完全免費提供所有核心功能，我們希望每一位毛孩家長都能輕鬆使用。",
+      "question": "PTalk 是免費的嗎？",
+      "answer": "是的！PTalk 完全免費提供所有核心功能，我們希望每一位毛孩家長都能輕鬆使用。",
       "category": "pricing"
     },
     {
@@ -208,7 +208,7 @@
   ],
   
   "brandInfo": {
-    "name": "Pet Talk",
+    "name": "PTalk",
     "slogan": "讓不會說話的牠，也能被好好守護。",
     "mission": "用十幾年的陪伴，我們守護牠的每一次選擇。",
     "vision": "建立一個安全、透明的資訊分享平台，讓每一位毛孩家長都能獲得真實可靠的地點評價，讓每一隻毛孩都能在最安全的環境中快樂生活。",
@@ -236,7 +236,7 @@
     },
     "socialMedia": {
       "instagram": "@pettalk_official",
-      "facebook": "Pet Talk 官方粉絲團",
+      "facebook": "PTalk 官方粉絲團",
       "twitter": null,
       "youtube": null
     }

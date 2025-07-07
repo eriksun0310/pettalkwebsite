@@ -48,7 +48,7 @@ export function Footer() {
         </div>
         
         <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; 2024 Pet Talk. All rights reserved.</p>
+          <p>&copy; 2024 PTalk. All rights reserved.</p>
         </div>
       </div>
     </footer>

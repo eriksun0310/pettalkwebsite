@@ -12,7 +12,7 @@ export default function AppPage() {
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <PageHeader
-              title="Pet Talk App 功能介紹"
+              title="PTalk App 功能介紹"
               subtitle="六大核心功能，讓資訊更透明，選擇更安心。"
             />
           </div>
@@ -30,7 +30,7 @@ export default function AppPage() {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-2xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                現在就下載 Pet Talk
+                現在就下載 PTalk
               </h2>
               <p className="text-lg text-muted-foreground">
                 加入我們，一起為毛孩打造更友善的未來。完全免費，馬上開始

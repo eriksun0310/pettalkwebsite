@@ -4,8 +4,8 @@ import { PageHeader, FAQItem, PageLayout, Section } from "@/components/shared"
 
 const faqData = [
   {
-    question: "Pet Talk 是免費的嗎？",
-    answer: "是的！Pet Talk 完全免費提供所有核心功能，我們希望每一位毛孩家長都能輕鬆使用。"
+    question: "PTalk 是免費的嗎？",
+    answer: "是的！PTalk 完全免費提供所有核心功能，我們希望每一位毛孩家長都能輕鬆使用。"
   },
   {
     question: "如何確保匿名性？",
@@ -15,10 +15,10 @@ const faqData = [
     question: "支援哪些平台？",
     answer: "目前支援 iOS 14+ 和 Android 8+，未來也會推出網頁版本。"
   },
-  {
-    question: "如何回報不實資訊？",
-    answer: "您可以直接在 App 內回報，我們會在 24 小時內處理。"
-  }
+  // {
+  //   question: "如何回報不實資訊？",
+  //   answer: "您可以直接在 App 內回報，我們會在 24 小時內處理。"
+  // }
 ]
 
 export default function ContactPage() {

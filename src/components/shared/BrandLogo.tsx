@@ -20,7 +20,7 @@ export function BrandLogo({
   const logoContent = (
     <div className={`flex items-center space-x-2 ${className}`}>
       <span className="text-2xl">🐾</span>
-      <span className={`font-bold ${sizeClasses[size]}`}>Pet Talk</span>
+      <span className={`font-bold ${sizeClasses[size]}`}>PTalk</span>
     </div>
   )
 

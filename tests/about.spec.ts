@@ -69,7 +69,7 @@ test.describe('關於我們頁', () => {
 
   test('頁面應該有正確的層次結構', async ({ page }) => {
     // 檢查頁面標題
-    await expect(page.locator('h1:has-text("關於 Pet Talk")')).toBeVisible();
+    await expect(page.locator('h1:has-text("關於 PTalk")')).toBeVisible();
     
     // 檢查副標題
     await expect(page.locator('text=用科技與愛心，打造毛孩安全的網路世界')).toBeVisible();

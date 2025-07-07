@@ -31,7 +31,7 @@ export default function AboutPage() {
     <PageLayout>
       <Section padding="xl">
         <PageHeader
-          title="關於 Pet Talk"
+          title="關於 PTalk"
           subtitle="因為牠不會說話，我們願意多說一點。"
         />
       </Section>

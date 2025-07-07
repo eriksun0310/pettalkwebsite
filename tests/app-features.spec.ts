@@ -41,7 +41,7 @@ test.describe('App 功能介紹頁', () => {
 
   test('底部應該有 App 下載區塊', async ({ page }) => {
     // 檢查標題
-    await expect(page.locator('h2:has-text("現在就下載 Pet Talk")')).toBeVisible();
+    await expect(page.locator('h2:has-text("現在就下載 PTalk")')).toBeVisible();
     
     // 檢查用戶數量說明
     await expect(page.locator('text=超過 10,000+ 毛孩家長正在使用')).toBeVisible();

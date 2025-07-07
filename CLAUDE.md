@@ -7,7 +7,7 @@
 
 ## 專案概述
 
-Pet Talk - 採用 Next.js、TypeScript、Tailwind CSS 和 shadcn/ui 構建的寵物友善場所評價與警示平台網站。
+PTalk - 採用 Next.js、TypeScript、Tailwind CSS 和 shadcn/ui 構建的寵物友善場所評價與警示平台網站。
 
 ## 技術架構
 - **框架**: Next.js 15 with App Router
@@ -46,7 +46,7 @@ src/
 │   │   ├── FeatureGrid.tsx # 三欄特色網格
 │   │   ├── AppDownloadButtons.tsx # 應用程式下載按鈕
 │   │   ├── SocialLinks.tsx # 社群媒體連結
-│   │   ├── BrandLogo.tsx   # Pet Talk 標誌元件
+│   │   ├── BrandLogo.tsx   # PTalk 標誌元件
 │   │   ├── PageHeader.tsx  # 頁面標題與副標題
 │   │   ├── ContactItem.tsx # 聯絡資訊項目
 │   │   └── index.ts        # 共享元件匯出
@@ -166,7 +166,7 @@ src/
 - **FeatureGrid** - 三欄特色佈局含圖標、標題、描述
 - **AppDownloadButtons** - App Store 與 Google Play 下載按鈕
 - **SocialLinks** - Instagram 與 Facebook 連結，可配置佈局
-- **BrandLogo** - Pet Talk 標誌，可選連結
+- **BrandLogo** - PTalk 標誌，可選連結
 - **ContactItem** - 聯絡資訊顯示含圖標與內容
 
 ### 許願池專用元件 (`src/components/wishes/`)

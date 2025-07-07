@@ -9,7 +9,7 @@ interface SocialLinksProps {
 
 export function SocialLinks({ 
   layout = "horizontal", 
-  showLabels = false,
+  showLabels = true,
   className = ""
 }: SocialLinksProps) {
   const containerClass = layout === "horizontal" 
@@ -35,8 +35,8 @@ export function SocialLinks({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Facebook className="w-5 h-5" />
-        {showLabels && <span>{CONTACT_INFO.social.facebook.name}</span>}
+        {/* <Facebook className="w-5 h-5" /> */}
+        {/* {showLabels && <span>{CONTACT_INFO.social.facebook.name}</span>} */}
       </a>
     </div>
   )

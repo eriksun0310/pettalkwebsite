@@ -68,7 +68,7 @@ test.describe('聯絡表單功能', () => {
 
   test('常見問題應該正確顯示', async ({ page }) => {
     const faqs = [
-      'Pet Talk 是免費的嗎？',
+      'PTalk 是免費的嗎？',
       '如何確保匿名性？',
       '支援哪些平台？',
       '如何回報不實資訊？'
@@ -91,6 +91,6 @@ test.describe('聯絡表單功能', () => {
     
     // 檢查社群連結
     await expect(page.locator('text=@pettalk_official')).toBeVisible();
-    await expect(page.locator('text=Pet Talk 官方粉絲團')).toBeVisible();
+    await expect(page.locator('text=PTalk 官方粉絲團')).toBeVisible();
   });
 });
